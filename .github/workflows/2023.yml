@@ -2,8 +2,12 @@ name: Advent of Code - 2023
 
 on:
   push:
+    paths:
+      - 2023/rust/**
     branches: ["develop"]
   pull_request:
+    paths:
+      - 2023/rust/**
     branches: ["develop"]
 
 env:
