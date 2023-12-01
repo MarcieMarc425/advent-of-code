@@ -3,3 +3,6 @@ create day:
 
 test day part:
   cargo nextest run -p {{day}} {{part}}
+
+run day part:
+  cargo watch -x "run -p {{day}} --bin {{part}}"

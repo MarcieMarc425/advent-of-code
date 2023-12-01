@@ -10,7 +10,6 @@ mod tests {
     fn test_process() {
         todo!("haven't built test yet");
         let input = "";
-        assert_eq!("", process(input)?);
-        Ok(())
+        assert_eq!("", "");
     }
 }
