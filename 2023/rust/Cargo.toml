@@ -2,3 +2,6 @@
 resolver = "2"
 
 members = ["day-*"]
+
+[workspace.dependencies]
+fancy-regex = "0.12.0"
