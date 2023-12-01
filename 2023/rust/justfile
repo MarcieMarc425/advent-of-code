@@ -1,2 +1,5 @@
 create day:
   cargo generate --path ./daily-template --name {{day}}
+
+test day part:
+  cargo nextest run -p {{day}} {{part}}
