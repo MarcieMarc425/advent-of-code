@@ -1,5 +1,8 @@
-pub fn process(_input: &str) {
+use std::io::Error;
+
+pub fn process(_input: &str) -> Result<(), Error> {
     todo!("day 01 - part 2");
+    Ok(())
 }
 
 #[cfg(test)]

@@ -2,6 +2,6 @@ use {{crate_name}}::part2::process;
 
 fn main() {
     let file = include_str!("../../input2.txt");
-    let result = process(file);
-    println!("{}", "part 2");
+    let result = process(file).unwrap();
+    println!("{}", result);
 }
