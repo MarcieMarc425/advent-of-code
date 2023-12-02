@@ -14,8 +14,8 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 day_01    fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ part1  64.54 µs      │ 164.8 µs      │ 64.97 µs      │ 67.62 µs      │ 100     │ 100
-╰─ part2  2.169 ms      │ 2.598 ms      │ 2.245 ms      │ 2.262 ms      │ 100     │ 100
+├─ part1  110.3 µs      │ 163.5 µs      │ 110.9 µs      │ 117.2 µs      │ 100     │ 100
+╰─ part2  2.195 ms      │ 4.447 ms      │ 2.206 ms      │ 2.369 ms      │ 100     │ 100
 
 
 running 2 tests
@@ -33,4 +33,6 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 day_02    fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ part1  
+├─ part1  206.4 µs      │ 410.9 µs      │ 245.7 µs      │ 257.7 µs      │ 100     │ 100
+╰─ part2  159.8 µs      │ 218.1 µs      │ 183.3 µs      │ 181.9 µs      │ 100     │ 100
+
