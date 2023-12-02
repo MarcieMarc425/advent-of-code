@@ -94,3 +94,36 @@ pub fn get_each_max_cube(game: &Game) -> Result<(u32, u32, u32), Error> {
 
     Ok((max_red, max_green, max_blue))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_game() {
+        let line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
+        let game = get_game(line).unwrap();
+        assert_eq!(game.game_number, 1);
+        assert_eq!(game.game_sets.len(), 3);
+        assert_eq!(game.game_sets[0].cubes.len(), 2);
+        assert_eq!(game.game_sets[1].cubes.len(), 3);
+        assert_eq!(game.game_sets[2].cubes.len(), 1);
+    }
+
+    #[test]
+    fn test_get_game_number() {
+        let line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
+        let game = get_game(line).unwrap();
+        assert_eq!(get_game_number(&game), 1);
+    }
+
+    #[test]
+    fn test_get_each_max_cube() {
+        let line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
+        let game = get_game(line).unwrap();
+        let (max_red, max_green, max_blue) = get_each_max_cube(&game).unwrap();
+        assert_eq!(max_red, 4);
+        assert_eq!(max_green, 2);
+        assert_eq!(max_blue, 6);
+    }
+}
