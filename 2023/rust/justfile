@@ -1,8 +1,20 @@
 create day:
   cargo generate --path ./daily-template --name {{day}}
 
+bench-all:
+  cargo bench -q > benchmarks.txt
+
+bench day part:
+  cargo bench --bench {{day}} {{part}} >> {{day}}.bench.txt
+
+test-day day:
+  cargo nextest run -p {{day}} part1 && cargo nextest run -p {{day}} part2
+
 test day part:
   cargo nextest run -p {{day}} {{part}}
 
 run day part:
   cargo watch -x "run -p {{day}} --bin {{part}}"
+
+work day part:
+  cargo watch -x "check -p {{day}}" -s "just test {{day}} {{part}}" -s "just bench {{day}} {{part}}"
