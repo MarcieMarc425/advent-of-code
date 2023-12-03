@@ -73,10 +73,7 @@ impl EngineSchematics {
         numbers
     }
 
-    pub fn get_gears(
-        &self,
-        part_numbers: HashMap<(u32, u32, u32), u32>,
-    ) -> HashMap<(u32, u32), Vec<u32>> {
+    pub fn get_gears_ratios(&self, part_numbers: HashMap<(u32, u32, u32), u32>) -> Vec<u32> {
         let mut gear_hashmap: HashMap<(u32, u32), Vec<u32>> = HashMap::new();
 
         for ((x1, x2, y), number) in part_numbers.iter() {
@@ -90,7 +87,16 @@ impl EngineSchematics {
             }
         }
 
-        gear_hashmap
+        let gear_ratios = gear_hashmap
+            .iter()
+            .filter(|(_, numbers)| numbers.len() == 2)
+            .map(|(_, numbers)| {
+                let ratio = numbers[0] * numbers[1];
+                ratio
+            })
+            .collect::<Vec<u32>>();
+
+        gear_ratios
     }
 }
 

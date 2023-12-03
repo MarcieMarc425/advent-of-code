@@ -5,15 +5,10 @@ use crate::mods::parse_engine_schematics;
 pub fn process(input: &str) -> Result<u32, Error> {
     let engine_schematics = parse_engine_schematics(input).unwrap();
     let part_numbers = engine_schematics.get_all_numbers_adjacent_to_symbols();
-    let gear_numbers_candidates = engine_schematics.get_gears(part_numbers);
-    let gears = gear_numbers_candidates
+    let sum = engine_schematics
+        .get_gears_ratios(part_numbers)
         .iter()
-        .filter(|(_, numbers)| numbers.len() == 2)
-        .map(|(_, numbers)| {
-            let ratio = numbers[0] * numbers[1];
-            ratio
-        });
-    let sum = gears.sum::<u32>();
+        .sum::<u32>();
     Ok(sum)
 }
 
