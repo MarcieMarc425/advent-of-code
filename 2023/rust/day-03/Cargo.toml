@@ -1,16 +1,15 @@
 [package]
-name = "day-01"
+name = "day-03"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
-fancy-regex = "0.12.0"
-rstest = { workspace = true }
 
 [dev-dependencies]
 divan = { workspace = true }
 
 [[bench]]
-name = "day-01"
+name = "day-03"
 path = "benches/benchmarks.rs"
 harness = false
+
+[dependencies]
+regex = "1.10.2"
